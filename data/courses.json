@@ -1,14 +1,15 @@
 [
-    {
-        "id": 1,
-        "title": "Python Backend",
-        "description": "Python, Telegram bot, API va backend asoslari",
-        "duration": "9 oy",
-        "price": 650000,
-        "level": "advanced",
-        "mentor_ids": [
-            1
-        ],
-        "is_active": true
-    }
+  {
+    "id": 1,
+    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4ii4_6NE2r_GhG6m_ZWtwwadDgOy46vp2lw&s",
+    "title": "Python Backend",
+    "description": "Python, Telegram bot, API va backend asoslari",
+    "duration": "9 oy",
+    "price": 650000,
+    "level": "advanced",
+    "mentor_ids": [
+      1
+    ],
+    "is_active": true
+  }
 ]

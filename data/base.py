@@ -91,7 +91,7 @@ class JsonDB:
 
 users_db = JsonDB("data/users.json")
 courses_db = JsonDB("data/courses.json")
-teachers_db = JsonDB("data/teachers.json")
+mentors_db = JsonDB("data/mentors.json")
 groups_db = JsonDB("data/groups.json")
 applications_db = JsonDB("data/applications.json")
 lessons_db = JsonDB("data/lessons.json")

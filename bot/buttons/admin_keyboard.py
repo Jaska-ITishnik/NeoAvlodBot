@@ -16,3 +16,9 @@ def admin_main_menu_kb():
     kb.add(*buttons)
     kb.adjust(2, 2, 2, 1)
     return kb.as_markup(resize_keyboard=True)
+
+
+def admin_add_mentor_kb():
+    kb = ReplyKeyboardBuilder()
+    kb.add(KeyboardButton(text="➕Mentor qo'shish"))
+    return kb.as_markup(resize_keyboard=True)

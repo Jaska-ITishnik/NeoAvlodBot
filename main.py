@@ -8,7 +8,7 @@ from aiogram.filters import CommandStart
 from aiogram.types import Message, BotCommand
 
 from bot.buttons import admin_main_menu_kb, user_main_menu_kb
-from bot.handlers import admin_router
+from bot.handlers import admin_message_router, admin_callback_router
 from config import TOKEN, ADMINS
 
 dp = Dispatcher()
@@ -104,7 +104,7 @@ async def on_shutdown(bot: Bot):
 
 async def main() -> None:
     bot = Bot(token=TOKEN)
-    dp.include_routers(admin_router)
+    dp.include_routers(admin_message_router, admin_callback_router)
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)
     await dp.start_polling(bot)
