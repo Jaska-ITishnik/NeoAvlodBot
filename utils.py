@@ -38,3 +38,6 @@
 #     json.dump(mentors, f, indent=4)
 
 
+
+buttons = [1, 1, 1, 1, 1, 1]
+print([2] * 3)

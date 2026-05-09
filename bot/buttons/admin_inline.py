@@ -25,3 +25,18 @@ def admin_mentor_edit_ikb(mentor_id: int):
     ikb.add(*buttons)
     ikb.adjust(2, 1)
     return ikb.as_markup()
+
+
+def admin_courses_ikb(courses: list):
+    ikb = InlineKeyboardBuilder()
+    buttons = []
+    for course in courses:
+        buttons.append(
+            InlineKeyboardButton(text=course['title'], callback_data=f"course_{course['id']}")
+        )
+    buttons.append(InlineKeyboardButton(text="+Qo'shish", style="success", callback_data="add_course"))
+    ikb.add(*buttons)
+    sizes = [2] * (len(buttons[:-1]) // 2)
+    sizes.append(1)
+    ikb.adjust(*sizes, repeat=True)
+    return ikb.as_markup()

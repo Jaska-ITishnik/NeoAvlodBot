@@ -38,3 +38,13 @@ To'liq ismini kiriting:
 <blockquote>Jamol Kamolov</blockquote>
     """)
     await state.set_state(AddMentorForm.full_name)
+
+
+@admin_callback_router.callback_query(F.data.startswith("delete_mentor_"))
+async def delete_mentor_handler(callback: CallbackQuery):
+    mentor_id = int(callback.data.split("_")[-1])
+    mentors_db.delete(item_id=mentor_id)
+    mentors = mentors_db.get_all()
+    await callback.message.delete()
+    await callback.answer("Mentor o'chirildi🗑")
+    await callback.message.answer("Mentorlar👇", reply_markup=admin_mentors_ikb(mentors))

@@ -3,16 +3,17 @@ from aiogram.enums import ContentType, ParseMode
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 
-from bot.buttons import admin_mentors_ikb
+from bot.buttons import admin_mentors_ikb, admin_courses_ikb
 from bot.states import AddMentorForm
-from data.base import mentors_db
+from data.base import mentors_db, courses_db
 
 admin_message_router = Router()
 
 
 @admin_message_router.message(F.text == "📚 Kurslar")
 async def courses_handler(message: Message):
-    pass
+    courses = courses_db.get_all()
+    await message.answer("Kurslar👇", reply_markup=admin_courses_ikb(courses))
 
 
 @admin_message_router.message(F.text == "👨‍🏫 Mentorlar")

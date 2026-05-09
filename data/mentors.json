@@ -8,14 +8,5 @@
             1
         ],
         "photo_id": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnPTW36hSzuH9wsjRZ4yce0mf54VWEiB4qNg&s"
-    },
-    {
-        "id": 2,
-        "full_name": "Toshmatov Eshmat",
-        "position": "Qorovul",
-        "experience": "40",
-        "course_ids": [],
-        "photo_id": "AgACAgIAAxkBAAIDBmn8jcA8Eg9L_I51vMGFJHU6esRhAAJSE2sbrZzoS8N6mibf-rXXAQADAgADcwADOwQ",
-        "created_at": "2026-05-07 18:04:00"
     }
 ]

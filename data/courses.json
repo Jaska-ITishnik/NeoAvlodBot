@@ -11,5 +11,44 @@
       1
     ],
     "is_active": true
+  },
+  {
+    "id": 2,
+    "photo": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+    "title": "Ingliz Tili",
+    "description": "Grammar, speaking, listening va IELTS asoslari",
+    "duration": "8 oy",
+    "price": 450000,
+    "level": "beginner",
+    "mentor_ids": [
+      2
+    ],
+    "is_active": true
+  },
+  {
+    "id": 3,
+    "photo": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d",
+    "title": "Yapon Tili",
+    "description": "Hiragana, Katakana, Kanji va kundalik suhbat",
+    "duration": "10 oy",
+    "price": 550000,
+    "level": "intermediate",
+    "mentor_ids": [
+      3
+    ],
+    "is_active": true
+  },
+  {
+    "id": 4,
+    "photo": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+    "title": "Kiberxavfsizlik",
+    "description": "Tarmoq xavfsizligi, ethical hacking va pentest",
+    "duration": "12 oy",
+    "price": 850000,
+    "level": "advanced",
+    "mentor_ids": [
+      4
+    ],
+    "is_active": true
   }
 ]
