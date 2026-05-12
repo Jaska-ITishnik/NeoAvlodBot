@@ -6,5 +6,5 @@ class AddCourseForm(StatesGroup):
     description = State()
     price = State()
     duration = State()
-    level = State()
+    mentor = State()
     photo = State()

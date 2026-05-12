@@ -1,54 +1,80 @@
 [
-  {
-    "id": 1,
-    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4ii4_6NE2r_GhG6m_ZWtwwadDgOy46vp2lw&s",
-    "title": "Python Backend",
-    "description": "Python, Telegram bot, API va backend asoslari",
-    "duration": "9 oy",
-    "price": 650000,
-    "level": "advanced",
-    "mentor_ids": [
-      1
-    ],
-    "is_active": true
-  },
-  {
-    "id": 2,
-    "photo": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-    "title": "Ingliz Tili",
-    "description": "Grammar, speaking, listening va IELTS asoslari",
-    "duration": "8 oy",
-    "price": 450000,
-    "level": "beginner",
-    "mentor_ids": [
-      2
-    ],
-    "is_active": true
-  },
-  {
-    "id": 3,
-    "photo": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d",
-    "title": "Yapon Tili",
-    "description": "Hiragana, Katakana, Kanji va kundalik suhbat",
-    "duration": "10 oy",
-    "price": 550000,
-    "level": "intermediate",
-    "mentor_ids": [
-      3
-    ],
-    "is_active": true
-  },
-  {
-    "id": 4,
-    "photo": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
-    "title": "Kiberxavfsizlik",
-    "description": "Tarmoq xavfsizligi, ethical hacking va pentest",
-    "duration": "12 oy",
-    "price": 850000,
-    "level": "advanced",
-    "mentor_ids": [
-      4
-    ],
-    "is_active": true
-  }
+    {
+        "id": 1,
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4ii4_6NE2r_GhG6m_ZWtwwadDgOy46vp2lw&s",
+        "title": "Python Backend",
+        "description": "Python, Telegram bot, API va backend asoslari",
+        "duration": "9 oy",
+        "price": 650000,
+        "mentor_ids": [
+            1,
+            2
+        ]
+    },
+    {
+        "id": 2,
+        "photo": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+        "title": "Ingliz Tili",
+        "description": "Grammar, speaking, listening va IELTS asoslari",
+        "duration": "8 oy",
+        "price": 450000,
+        "mentor_ids": [
+            2
+        ],
+        "is_active": true
+    },
+    {
+        "id": 3,
+        "photo": "https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/organizations/5d2656f1-9162-461d-88c7-b2505623d8cb/images/2YV6x0W21XFcAYvPbkO5qG.jpeg",
+        "title": "Yapon Tili",
+        "description": "Hiragana, Katakana, Kanji va kundalik suhbat",
+        "duration": "10 oy",
+        "price": 550000,
+        "mentor_ids": []
+    },
+    {
+        "id": 4,
+        "photo": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+        "title": "Kiberxavfsizlik",
+        "description": "Tarmoq xavfsizligi, ethical hacking va pentest",
+        "duration": "12 oy",
+        "price": 850000,
+        "mentor_ids": []
+    },
+    {
+        "id": 5,
+        "title": "Rus tili",
+        "description": "Pushkindan maxsus rus tili kurlari",
+        "price": "600000",
+        "duration": "10 oy",
+        "mentor_ids": [
+            2
+        ],
+        "photo": "AgACAgIAAxkBAAIFEWoDG14ahKOb7BGv_t1_McoC_5iLAAIaF2sbRE8ZSDzjWt0Z0pZbAQADAgADcwADOwQ",
+        "created_at": "2026-05-12 17:24:31"
+    },
+    {
+        "id": 6,
+        "title": "JavaScript",
+        "description": "1-dars bepul!",
+        "price": "500 000 so'm",
+        "duration": "1 yil",
+        "mentor_ids": [
+            1
+        ],
+        "photo": "AgACAgIAAxkBAAIFRGoDHPHZMm7cWLCZwwABu8xRjLanKwACsxVrGz8gGEjtgdOEu4cqYQEAAwIAA3MAAzsE",
+        "created_at": "2026-05-12 17:28:33"
+    },
+    {
+        "id": 7,
+        "title": "nemis tili",
+        "description": "[5/12/26 5:32\u202fPM] Meyirbek Kuvanishbayev: nemis tili\n[5/12/26 5:32\u202fPM] Meyirbek Kuvanishbayev: juda kop bilim",
+        "price": "1000000",
+        "duration": "10 yil",
+        "mentor_ids": [
+            2
+        ],
+        "photo": "AgACAgIAAxkBAAIFjGoDHneRraQ_IbHeSoaP2KBYDivDAAJ2FWsbs4IYSL6TRDOA3_AgAQADAgADcwADOwQ",
+        "created_at": "2026-05-12 17:35:04"
+    }
 ]

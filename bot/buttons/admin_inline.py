@@ -15,6 +15,18 @@ def admin_mentors_ikb(mentors: list):
     return ikb.as_markup()
 
 
+def admin_mentors_select_ikb(mentors: list):
+    ikb = InlineKeyboardBuilder()
+    buttons = []
+    for mentor in mentors:
+        buttons.append(
+            InlineKeyboardButton(text=mentor['full_name'], callback_data=f"select_mentor_{mentor['id']}")
+        )
+    ikb.add(*buttons)
+    ikb.adjust(1, repeat=True)
+    return ikb.as_markup()
+
+
 def admin_mentor_edit_ikb(mentor_id: int):
     ikb = InlineKeyboardBuilder()
     buttons = [
@@ -39,4 +51,16 @@ def admin_courses_ikb(courses: list):
     sizes = [2] * (len(buttons[:-1]) // 2)
     sizes.append(1)
     ikb.adjust(*sizes, repeat=True)
+    return ikb.as_markup()
+
+
+def admin_course_edit_ikb(course_id: int):
+    ikb = InlineKeyboardBuilder()
+    buttons = [
+        InlineKeyboardButton(text="✏", callback_data=f"edit_course_{course_id}"),
+        InlineKeyboardButton(text="🗑", callback_data=f"delete_course_{course_id}"),
+        InlineKeyboardButton(text="🔙Orqaga", callback_data="back_courses")
+    ]
+    ikb.add(*buttons)
+    ikb.adjust(2, 1)
     return ikb.as_markup()
