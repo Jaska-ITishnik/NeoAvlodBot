@@ -76,5 +76,17 @@
         ],
         "photo": "AgACAgIAAxkBAAIFjGoDHneRraQ_IbHeSoaP2KBYDivDAAJ2FWsbs4IYSL6TRDOA3_AgAQADAgADcwADOwQ",
         "created_at": "2026-05-12 17:35:04"
+    },
+    {
+        "id": 8,
+        "title": "Koreys tili",
+        "description": "Karis bo'lib ketasiz",
+        "price": "700000",
+        "duration": "10oy",
+        "mentor_ids": [
+            1
+        ],
+        "photo": "AgACAgIAAxkBAAIF82oFpsNXDVeLujdK4NVYqp_7fwqbAAKdE2sbWrApSEYNilmSFNbKAQADAgADcwADOwQ",
+        "created_at": "2026-05-14 15:41:07"
     }
 ]

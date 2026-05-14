@@ -9,73 +9,10 @@ from aiogram.types import Message, BotCommand
 
 from bot.buttons import admin_main_menu_kb, user_main_menu_kb
 from bot.handlers import admin_message_router, admin_callback_router
+from bot.middlewares import JoinRequirementMiddleware
 from config import TOKEN, ADMINS
 
 dp = Dispatcher()
-
-
-# class RegistrationForm(StatesGroup):
-#     course = State()
-#     phone = State()
-#     full_name = State()
-#     dob = State()
-#
-#
-# ABOUT_COURSES = """
-# <b>NEOAVLOD MARKAZIMIZ KURSLARI</b>
-#
-# <b>Python (Web yo‘nalish)</b>
-# Davomiyligi: 9 oy
-# To‘lov: oyiga 650 000 so‘m
-# Yo‘nalish: Web dasturlashga asoslangan
-# Siz nimalarni o‘rganasiz?
-#
-# • Python dasturlash asoslari
-# • Web saytlar yaratish
-# • Backend dasturlash
-# • Real loyihalar bilan ishlash
-#
-# <b>Ingliz tili (Best of the Best)</b>
-# Davomiyligi: 9 oy
-# To‘lov: oyiga 450 000 so‘m
-# Kurs afzalliklari:
-#
-# • Zamonaviy metodika
-# • Speaking, Listening, Reading, Writing ko‘nikmalari
-# • Tajribali ustozlar
-# • IELTS ga tayyorlov
-#
-# <b>Yapon tili</b>
-# Davomiyligi: (individual belgilanadi)
-# To‘lov: (aniqlashtiriladi)
-# Kurs davomida:
-#
-# • Yapon alifbolari (Hiragana, Katakana, Kanji)
-# • Kundalik suhbatlashuv
-# • Yapon madaniyati bilan tanishuv
-# • Boshlang‘ichdan yuqori darajagacha o‘rganish imkoniyati
-#
-# <b>Kiber xavfsizlik (Cyber Security)</b>
-# To‘lov: oyiga 500 000 so‘m
-# Siz nimalarni o‘rganasiz?
-#
-# • Internet xavfsizligi asoslari
-# • Tizimlarni himoyalash
-# • Hackerlik tushunchalari (ethical hacking)
-# • Amaliy mashg‘ulotlar
-#
-# <b>Biz bilan kelajagingizni bugundan boshlang!</b>
-# Batafsil ma’lumot uchun bog‘laning!
-# Joylar soni cheklangan!
-# """
-#
-#
-# @dp.message(Command(commands=["help"]))
-# async def help_handler(message: Message):
-#     await message.answer("""
-# /start --- <blockquote>Botni ishga tushurish🛫</blockquote>
-# /help --- <blockquote>Bot uchun yoriqnoma📖</blockquote>
-#     """, parse_mode=ParseMode.HTML)
 
 
 @dp.message(CommandStart())
@@ -104,6 +41,7 @@ async def on_shutdown(bot: Bot):
 
 async def main() -> None:
     bot = Bot(token=TOKEN)
+    dp.update.outer_middleware.register(JoinRequirementMiddleware())
     dp.include_routers(admin_message_router, admin_callback_router)
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)

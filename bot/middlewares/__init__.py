@@ -1,0 +1,1 @@
+from bot.middlewares.join_req_middleware import JoinRequirementMiddleware
