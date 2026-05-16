@@ -2,10 +2,10 @@ import asyncio
 import logging
 import sys
 
-from aiogram import Bot, Dispatcher
+from aiogram import Bot, Dispatcher, F
 from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
-from aiogram.types import Message, BotCommand
+from aiogram.types import Message, BotCommand, CallbackQuery
 
 from bot.buttons import admin_main_menu_kb, user_main_menu_kb
 from bot.handlers import admin_message_router, admin_callback_router
@@ -13,6 +13,11 @@ from bot.middlewares import JoinRequirementMiddleware
 from config import TOKEN, ADMINS
 
 dp = Dispatcher()
+
+
+@dp.callback_query(F.text == "is_join_chekker")
+async def handle_check_if_subscribed(callback_query: CallbackQuery):
+    await callback_query.answer("Tekshirish bosildi ✅")
 
 
 @dp.message(CommandStart())
