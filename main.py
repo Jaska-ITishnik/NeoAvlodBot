@@ -6,6 +6,7 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
 from aiogram.types import Message, BotCommand, CallbackQuery
+from aiogram.utils.i18n import gettext as _, I18n, FSMI18nMiddleware
 
 from bot.buttons import admin_main_menu_kb, user_main_menu_kb
 from bot.handlers import admin_message_router, admin_callback_router
@@ -23,11 +24,12 @@ async def handle_check_if_subscribed(callback_query: CallbackQuery):
 @dp.message(CommandStart())
 async def command_start_handler(message: Message) -> None:
     if message.from_user.id in ADMINS:
-        await message.answer("Assalomu aleykum <b>ADMIN</b> xush kelibsiz!",
+        await message.answer(_("Assalomu aleykum <b>ADMIN</b> xush kelibsiz!", locale="en"),
                              reply_markup=admin_main_menu_kb(), parse_mode=ParseMode.HTML)
     else:
-        await message.answer("Assalomu aleykum <b>NEOAVLOD</b> o'quv markazi rasmiy botiga xush kelibsiz!",
-                             reply_markup=user_main_menu_kb(), parse_mode=ParseMode.HTML)
+        await message.answer(
+            _("Assalomu aleykum <b>NEOAVLOD</b> o'quv markazi rasmiy botiga xush kelibsiz!", locale="en"),
+            reply_markup=user_main_menu_kb(), parse_mode=ParseMode.HTML)
 
 
 async def on_startup(bot: Bot):
@@ -46,6 +48,8 @@ async def on_shutdown(bot: Bot):
 
 async def main() -> None:
     bot = Bot(token=TOKEN)
+    i18 = I18n(path="locales", default_locale="uz", domain="messages")
+    dp.update.outer_middleware.register(FSMI18nMiddleware(i18))
     dp.update.outer_middleware.register(JoinRequirementMiddleware())
     dp.include_routers(admin_message_router, admin_callback_router)
     dp.startup.register(on_startup)

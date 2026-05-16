@@ -2,9 +2,9 @@ from typing import Any, Dict
 
 from aiogram import BaseMiddleware, Bot
 from aiogram.enums import ChatMemberStatus
-from aiogram.exceptions import TelegramBadRequest
 from aiogram.types import Message, CallbackQuery, InlineKeyboardButton
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+
 
 
 class JoinRequirementMiddleware(BaseMiddleware):
